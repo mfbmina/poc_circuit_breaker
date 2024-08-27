@@ -1,5 +1,7 @@
 # poc_circuit_breaker
 
+[Blog post PT-BR](https://mfbmina.dev/posts/golang-circuit-breaker/)
+
 It defines two apps: A and B.
 
 A is a microservice with two endppoints: 
