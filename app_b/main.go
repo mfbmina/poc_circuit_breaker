@@ -21,13 +21,11 @@ func main() {
 
 	url := "http://localhost:8080/success"
 	cb.Execute(func() (int, error) { return Get(url) })
-	fmt.Println("Circuit Breaker state:", cb.State(), cb.Counts().Requests) // closed!
+	fmt.Println("Circuit Breaker state:", cb.State()) // closed!
 
 	url = "http://localhost:8080/failure"
-	for range 2 {
-		cb.Execute(func() (int, error) { return Get(url) })
-		fmt.Println("Circuit Breaker state:", cb.State(), cb.Counts().Requests) // still closed!
-	}
+	cb.Execute(func() (int, error) { return Get(url) })
+	fmt.Println("Circuit Breaker state:", cb.State()) // open!
 
 	time.Sleep(time.Second * 6)
 	url = "http://localhost:8080/success"
