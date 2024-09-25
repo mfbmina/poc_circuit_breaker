@@ -1,6 +1,7 @@
 # poc_circuit_breaker
 
 [Blog post PT-BR](https://mfbmina.dev/posts/golang-circuit-breaker/)
+[Blog post EN](https://mfbmina.dev/en/posts/golang-circuit-breaker/)
 
 It defines two apps: A and B.
 
